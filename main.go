@@ -28,5 +28,11 @@ func main() {
 	//tutorial.GetEtherAmountFromAddress(client, addr)
 
 	// 이더 지갑 생성
-	tutorial.GenerateWallet()
+	//tutorial.GenerateWallet()
+
+	// 암호화 지갑 생성
+	//tutorial.GenerateKeystore()
+
+	// 테스트 네트워크에서 이더 가져와보기
+	tutorial.GetEtherFromTestNetwork()
 }
