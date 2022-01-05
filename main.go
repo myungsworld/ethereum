@@ -33,6 +33,12 @@ func main() {
 	// 암호화 지갑 생성
 	//tutorial.GenerateKeystore()
 
-	// 테스트 네트워크에서 이더 가져와보기
+	// 테스트 네트워크에서 이더 가져오기
 	tutorial.GetEtherFromTestNetwork()
+
+	// 트랜잭션 생성 ( 계좌송금 )
+	//tutorial.GetEtherFromTestNetwork()
+	//tutorial.MakeTransaction()
+
+
 }
