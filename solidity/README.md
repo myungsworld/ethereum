@@ -1,7 +1,5 @@
 # Solidity
 
----
-
 ## 개발 환경 구축
 
 ### [Remix IDE](https://remix.ethereum.org)
