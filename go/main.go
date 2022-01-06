@@ -3,8 +3,6 @@ package main
 import (
 	"context"
 	"ethereum/config"
-	"ethereum/tutorial"
-
 	"github.com/ethereum/go-ethereum/ethclient"
 	"log"
 )
@@ -35,7 +33,7 @@ func main() {
 	//tutorial.GenerateKeystore()
 
 	// 테스트 네트워크에서 이더 가져오기
-	tutorial.GetEtherFromTestNetwork()
+	//tutorial.GetEtherFromTestNetwork()
 
 	// 트랜잭션 생성 ( 계좌송금 )
 	//tutorial.GetEtherFromTestNetwork()
