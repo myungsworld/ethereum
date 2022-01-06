@@ -4,6 +4,7 @@ import (
 	"context"
 	"ethereum/config"
 	middlewares "ethereum/middleware"
+
 	"fmt"
 	"github.com/ethereum/go-ethereum/accounts/keystore"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -18,7 +19,7 @@ func MakeTransaction() {
 	client , err := ethclient.Dial(config.Kovan)
 
 	// PendingNonceAt 으로 nonce 값 가져오기
-	nonce, err := client.PendingNonceAt(ctx,a1)
+	nonce, err := client.PendingNonceAt(ctx, a1)
 	if err != nil {
 		panic(err)
 	}
@@ -39,7 +40,7 @@ func MakeTransaction() {
 
 	// 송금할 주소의 프라이빗키 가져오기
 	b , _ := ioutil.ReadFile("wallet/UTC--2022-01-05T05-14-39.630076000Z--e5d477e97d7ec6acd908c9865cfecc998927164b")
-	key , _ := keystore.DecryptKey(b,config.Password)
+	key , _ := keystore.DecryptKey(b, config.Password)
 	privateKey := key.PrivateKey
 
 	// 트랜잭션 체인아이디와 프라이빗키 확인

@@ -26,7 +26,7 @@ func GetLatestBlockNumber(client *ethclient.Client) *big.Int {
 }
 
 func GetSpecificBlockHash(client *ethclient.Client) {
-	block , err := client.BlockByHash(ctx , common.HexToHash("0x6b1a5cdc5e51172c2f4eb97e3fea0b99b4cac1372fba99f7e4d3b75bc32f0472"))
+	block , err := client.BlockByHash(ctx, common.HexToHash("0x6b1a5cdc5e51172c2f4eb97e3fea0b99b4cac1372fba99f7e4d3b75bc32f0472"))
 	if err != nil {
 		fmt.Println("client.BlockByHash Err :", err )
 		panic(err)

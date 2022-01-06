@@ -23,7 +23,7 @@ func GetEtherFromTestNetwork() {
 	}
 
 
-	b1Wei, err := client.BalanceAt(ctx,a1, nil)
+	b1Wei, err := client.BalanceAt(ctx, a1, nil)
 	if err != nil {
 		fmt.Println(err)
 		panic(err)
@@ -34,7 +34,7 @@ func GetEtherFromTestNetwork() {
 
 
 
-	b2Wei, err := client.BalanceAt(ctx,a2, nil)
+	b2Wei, err := client.BalanceAt(ctx, a2, nil)
 	if err != nil {
 		fmt.Println(err)
 		panic(err)
