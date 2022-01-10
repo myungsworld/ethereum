@@ -52,7 +52,7 @@ gasLimit 과 gasPrice 를 곱한 이더가 수수료가 된다.
 위의 예제로는 21000 * 200 = 4,200,000 Gwei 즉, 0.0042 ETH 가 수수료로 지불한다.   
 이 수수료는 마이닝을 하는 사람에게 간다.
 
-## 7. [내 스마트컨트랙트 배포하기]()
+## 7. [내 스마트컨트랙트 배포하기](https://github.com/myungsworld/ethereum/blob/main/go/tutorial/7.deploy_smart_contract.go)
 
 - abigen 으로 생성한 go 파일안에 있는 Deploy 함수로 이더리움 네트워크에 쉽게 스마트 컨트랙트를 배포할수 있다.
 - 프라이빗키 , chainID , gasPrice 등 기본적인 배포에 대한 정보들이 필요하다.
