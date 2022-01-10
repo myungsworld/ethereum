@@ -39,5 +39,9 @@ func main() {
 	//tutorial.GetEtherFromTestNetwork()
 	//tutorial.MakeTransaction()
 
+	// 스마트컨트랙트 배포
+	//tutorial.DeploySmartContract()
 
+	// 스마트컨트랙트 사용
+	//tutorial.InteractWithSmartContract()
 }
