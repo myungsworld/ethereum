@@ -57,7 +57,7 @@ gasLimit 과 gasPrice 를 곱한 이더가 수수료가 된다.
 - abigen 으로 생성한 go 파일안에 있는 Deploy 함수로 이더리움 네트워크에 쉽게 스마트 컨트랙트를 배포할수 있다.
 - 프라이빗키 , chainID , gasPrice 등 기본적인 배포에 대한 정보들이 필요하다.
 
-## 8. [배포된 컨트랙트 핸들링하기]()
+## 8. [배포된 컨트랙트 핸들링하기](https://github.com/myungsworld/ethereum/blob/main/go/tutorial/8.interact_my_deployed_contract.go)
 
 - 고파일에 있는 함수들로 컨트랙트를 고언어로 핸들링이 가능하다.
 - solidity로 작성된 함수들이 고 함수들로 변경이 되며 권한에 따라 읽기,쓰기,수정,삭제가 가능하다.
