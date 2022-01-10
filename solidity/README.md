@@ -27,3 +27,13 @@
 - 솔리디티 스마트 컨트랙트를 작성한 후 [Solidity Compiler](https://github.com/ethereum/solidity) 를 통한 .bin 과 .abi 파일 생성
 - 바이너리 파일 (.bin) 은 어더리움 네트워크(EVM) 에 배포
 - abi 는 (API 와 비슷한 개념) abigen 을 통해 고 파일로 변경이 가능함 
+
+### solc and abigen
+
+```shell
+solc --bin --abi contract.sol -o build
+abigen --bin=build/contract.bin --abi=build/contract.abi --pkg=contract --out=gen/contract.go
+```
+
+- solc 명령어로 bin 과 abi 파일 빌드 후
+- abigen으로 고언어로 핸들링 할 수 있는 contract.go 파일 생성
