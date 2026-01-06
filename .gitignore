@@ -1,0 +1,38 @@
+# Binaries
+bin/
+build/
+out/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Env
+.env
+.env.local
+.env.*
+
+# Go
+go/bin/
+
+# Solidity / Foundry
+solidity/cache/
+solidity/out/
+solidity/broadcast/
+
+# Rust
+rust/target/
+
+# Node
+node_modules/
+typescript/node_modules/
+
+# Keystore files (security)
+keystore/
+*.keystore
+
+# Logs
+*.log

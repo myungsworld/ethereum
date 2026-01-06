@@ -1,30 +1,97 @@
-# Ethereum
+# Ethereum Development
 
-## [Go](https://github.com/myungsworld/ethereum/tree/main/go)
+블록체인 개발자를 위한 학습 & 프로젝트 저장소
 
----
+## 프로젝트 구조
 
-## [Solidity](https://github.com/myungsworld/ethereum/tree/main/solidity)
-
----
-
-### Deploy
-
-![스크린샷 2022-01-07 오후 1 21 11](https://user-images.githubusercontent.com/56465854/148492075-a0f15cd3-110d-4428-80d3-5048e390bde6.png)
-
-- 솔리디티 스마트 컨트랙트를 작성한 후 [Solidity Compiler](https://github.com/ethereum/solidity) 를 통한 .bin 과 .abi 파일 생성
-- 바이너리 파일 (.bin) 은 어더리움 네트워크(EVM) 에 배포
-- abi 는 (API 와 비슷한 개념) abigen 을 통해 고 파일로 변경이 가능함
-
-#### solc and abigen
-
-```shell
-solc --bin --abi contract.sol -o build
-abigen --bin=build/contract.bin --abi=build/contract.abi --pkg=contract --out=gen/contract.go
+```
+ethereum/
+├── docs/
+│   └── ROADMAP.md              # 학습 로드맵
+│
+├── go/                         # Go 애플리케이션 (클린 아키텍처)
+│   ├── .env                    # 환경 설정
+│   ├── cmd/                    # 진입점
+│   └── internal/
+│       ├── config/             # 환경 설정 로드
+│       ├── domain/             # 비즈니스 엔티티
+│       ├── repository/         # 인터페이스 정의
+│       ├── usecase/            # 비즈니스 로직
+│       └── infrastructure/
+│           ├── ethereum/       # ethclient 구현
+│           └── contracts/      # 컨트랙트 Go 바인딩
+│
+├── solidity/                   # Solidity 스마트 컨트랙트
+│   ├── contracts/              # 컨트랙트 소스 (.sol)
+│   ├── build/                  # 컴파일 결과 (ABI, BIN)
+│   └── test/                   # 테스트
+│
+├── scripts/                    # 빌드/배포 스크립트
+│
+├── projects/                   # 종합 프로젝트 (예정)
+├── rust/                       # Rust 프로젝트 (예정)
+└── typescript/                 # TypeScript 프로젝트 (예정)
 ```
 
-- solc 명령어로 bin 과 abi 파일 빌드 후
-- abigen으로 고언어로 핸들링 할 수 있는 contract.go 파일 생성
-- 오너의 월렛주소, 프라이빗키 , 네트워크 및 컨트랙트 정보 (chainID , nonce , GasPrice , GasLimit) 등을 가지고
-- 선택한 네트워크에 스마트 컨트랙트를 배포한다.
-- [abigen을 통해서 생성된 go 파일 살펴보기](https://github.com/myungsworld/ethereum/blob/main/go/gen/todo.go)
+## 기술 스택
+
+| 도구 | 버전 | 용도 |
+|------|------|------|
+| Go | 1.25+ | 애플리케이션 개발 |
+| go-ethereum | 1.16+ | 이더리움 클라이언트 |
+| solc | 0.8.33 | Solidity 컴파일러 |
+| abigen | 1.16+ | Go 바인딩 생성 |
+
+## 시작하기
+
+### 1. 환경 설정
+
+```bash
+cd go
+cp .env.example .env
+# .env 파일에서 PRIVATE_KEY 설정
+```
+
+### 2. Go 애플리케이션 실행
+
+```bash
+cd go
+go mod download
+go run cmd/main.go
+```
+
+### 3. 스마트 컨트랙트 컴파일
+
+```bash
+./scripts/compile.sh
+```
+
+## 환경 설정
+
+`.env` 파일에서 환경을 전환합니다:
+
+```bash
+# development: Sepolia 테스트넷
+# production: 이더리움 메인넷
+ENV=development
+```
+
+## 학습 로드맵
+
+자세한 내용: [docs/ROADMAP.md](docs/ROADMAP.md)
+
+| Phase | 주제 | 상태 |
+|-------|------|------|
+| 1 | 이더리움 기초 (블록, 트랜잭션, 지갑) | 진행중 |
+| 2 | 스마트 컨트랙트 (Solidity, 배포, 호출) | 진행중 |
+| 3 | go-ethereum 심화 | 예정 |
+| 4 | 실무 (인덱서, 이벤트 리스너) | 예정 |
+| 5 | L2, MEV | 예정 |
+| 6 | 대체 체인 (Solana, Aptos) | 예정 |
+
+## 참고 자료
+
+- [Ethereum Docs](https://ethereum.org/developers)
+- [go-ethereum](https://github.com/ethereum/go-ethereum)
+- [Solidity Docs](https://docs.soliditylang.org/)
+- [Ethereum Development with Go](https://goethereumbook.org/)
