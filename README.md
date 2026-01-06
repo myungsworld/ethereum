@@ -78,7 +78,8 @@ ENV=development
 
 ## 학습 로드맵
 
-자세한 내용: [docs/ROADMAP.md](docs/ROADMAP.md)
+- **로드맵**: [docs/ROADMAP.md](docs/ROADMAP.md)
+- **진행 상황**: [docs/PROGRESS.md](docs/PROGRESS.md) ← Claude 세션용
 
 | Phase | 주제 | 상태 |
 |-------|------|------|
