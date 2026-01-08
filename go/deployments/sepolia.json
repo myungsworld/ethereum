@@ -1,0 +1,28 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployedAt": "2026-01-08",
+  "deployer": "0xdFcC6De7FC6ebfcbE0f465A2fC14917e74FCB5f6",
+
+  "contracts": {
+    "CounterV1": {
+      "address": "0x401e2e87Cd6B0D419Fc40f6192D6Ae1F8f9E53a3",
+      "description": "첫 번째 로직 컨트랙트"
+    },
+    "CounterV2": {
+      "address": "0xB032FaaB7504d2143A766f5CD562895175448000",
+      "description": "업그레이드된 로직 컨트랙트 (incrementBy, reset 추가)"
+    },
+    "CounterProxy": {
+      "address": "0xE61c5e06B5656Eb618011140807b21ffE9d6D4E4",
+      "description": "사용자가 상호작용하는 Proxy 컨트랙트",
+      "currentLogic": "CounterV2",
+      "admin": "0xdFcC6De7FC6ebfcbE0f465A2fC14917e74FCB5f6"
+    }
+  },
+
+  "notes": {
+    "etherscan": "https://sepolia.etherscan.io/address/0xE61c5e06B5656Eb618011140807b21ffE9d6D4E4",
+    "verifyStatus": "미완료 - solidity 소스코드 verify 필요"
+  }
+}

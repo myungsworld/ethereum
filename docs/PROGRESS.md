@@ -16,21 +16,25 @@
 | Counter 컨트랙트 | ✅ 완료 | 배포됨: `0x6CE93619B4A2C81ABf0FB86701493D2d6903B8D9` (Sepolia) |
 | 컨트랙트 상호작용 | ✅ 완료 | cmd/interact/main.go (상세 디버깅 포함) |
 
-### 진행 중인 작업
+### 완료된 작업 (최근)
 
-**Proxy 패턴 구현** - 50% 완료
+**Proxy 패턴 구현** - ✅ 100% 완료
 
 작성된 파일:
 - `solidity/contracts/proxy/CounterStorage.sol` ✅
 - `solidity/contracts/proxy/CounterV1.sol` ✅
-- `solidity/contracts/proxy/CounterV2.sol` ❌ (작성 필요)
-- `solidity/contracts/proxy/CounterProxy.sol` ❌ (작성 필요)
+- `solidity/contracts/proxy/CounterV2.sol` ✅
+- `solidity/contracts/proxy/CounterProxy.sol` ✅
+- `go/cmd/proxy/main.go` ✅ (배포 및 테스트 코드)
+- `go/deployments/sepolia.json` ✅ (배포 정보 기록)
 
-남은 작업:
-1. CounterV2.sol 작성 (incrementBy, reset 등 새 기능)
-2. CounterProxy.sol 작성 (delegatecall 구현)
-3. 컴파일 및 Go 바인딩 생성
-4. 배포 및 업그레이드 테스트 코드 작성
+완료된 작업:
+1. ✅ CounterV2.sol 작성 (incrementBy, reset, setCount 추가)
+2. ✅ CounterProxy.sol 작성 (delegatecall, upgradeTo 구현)
+3. ✅ 컴파일 및 Go 바인딩 생성
+4. ✅ Sepolia 테스트넷 배포 및 업그레이드 테스트
+
+### 진행 중인 작업
 
 ---
 
@@ -80,6 +84,9 @@ ethereum/
 | 컨트랙트 | 주소 | 네트워크 |
 |----------|------|---------|
 | Counter | `0x6CE93619B4A2C81ABf0FB86701493D2d6903B8D9` | Sepolia |
+| CounterV1 | `0x401e2e87Cd6B0D419Fc40f6192D6Ae1F8f9E53a3` | Sepolia |
+| CounterV2 | `0xB032FaaB7504d2143A766f5CD562895175448000` | Sepolia |
+| **CounterProxy** | `0xE61c5e06B5656Eb618011140807b21ffE9d6D4E4` | Sepolia |
 
 ### 실행 방법
 ```bash
